@@ -1,0 +1,24 @@
+{
+  "recommendations": [
+    "2gua.rainbow-brackets",
+    "aaron-bond.better-comments",
+    "codezombiech.gitignore",
+    "coenraads.bracket-pair-colorizer-2",
+    "dbaeumer.vscode-eslint",
+    "ecmel.vscode-html-css",
+    "esbenp.prettier-vscode",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "kisstkondoros.vscode-gutter-preview",
+    "meganrogge.template-string-converter",
+    "mkaufman.htmlhint",
+    "miguelsolorio.min-theme",
+    "ms-vsliveshare.vsliveshare-pack",
+    "naumovs.color-highlight",
+    "oderwat.indent-rainbow",
+    "pkief.material-icon-theme",
+    "stkb.rewrap",
+    "streetsidesoftware.code-spell-checker",
+    "tyriar.sort-lines"
+  ]
+}

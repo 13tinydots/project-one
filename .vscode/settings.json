@@ -1,0 +1,35 @@
+{
+  "better-comments.highlightPlainText": true,
+  "[css]": {
+    "editor.foldingStrategy": "indentation"
+  },
+  "css.validate": true,
+  "editor.accessibilitySupport": "off",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontFamily": "'Victor Mono', 'Fira Code', 'Inconsolata', 'Source Code Pro', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "editor.linkedEditing": true,
+  "editor.scrollBeyondLastColumn": 2,
+  "editor.smoothScrolling": true,
+  "editor.tabSize": 2,
+  "emmet.includeLanguages": {
+    "javascript": "html"
+  },
+  "editor.wordWrap": "wordWrapColumn",
+  "files.autoSave": "onFocusChange",
+  "files.eol": "\n",
+  "files.trimTrailingWhitespace": true,
+  "javascript.validate.enable": false,
+  "kite.codefinder.enableLineDecoration": false,
+  "prettier.requireConfig": true,
+  "stylelint.enable": true,
+  "terminal.integrated.fontFamily": "'Inconsolata', monospace",
+  "workbench.colorTheme": "Min Dark",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.view.alwaysShowHeaderActions": true
+}

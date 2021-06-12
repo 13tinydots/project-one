@@ -1,0 +1,33 @@
+{
+  "name": "bulma-starter",
+  "version": "0.0.1",
+  "private": true,
+  "description": "A starter template repo for Bulma",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --server --files '**/*.html, **/*.css, **/**.js'",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "bulma",
+    "student"
+  ],
+  "author": "Manav Misra",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "eslint": "^7.28.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "2.3.1"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,md}": "prettier --write"
+  }
+}
