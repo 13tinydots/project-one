@@ -29,7 +29,7 @@
   "prettier.requireConfig": true,
   "stylelint.enable": true,
   "terminal.integrated.fontFamily": "'Inconsolata', monospace",
-  "workbench.colorTheme": "Min Dark",
+  "workbench.colorTheme": "Default Dark+",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.view.alwaysShowHeaderActions": true
 }
