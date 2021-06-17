@@ -5,12 +5,12 @@ const gif = null;
 
 document.querySelector("form").addEventListener("submit", (ev) => {
   ev.preventDefault();
-
-  console.log(ev.target.elements[0].value);
-
   api.getWeather(ev.target.elements[0].value).then((weatherData) => {
     weather = weatherData;
-    console.log(weather);
+    const temp = weather.data[0].temp;
+    const wind = weather.data[0].wind_spd;
+    const hum = weather.data[0].rh;
+    const condition = weather.data[0].weather.description;
   });
 });
 
