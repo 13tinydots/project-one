@@ -1,7 +1,7 @@
 import api from "./api.js";
 
 let weather = null;
-const gif = null;
+let gif = null;
 const tempText = document.getElementById("temperature");
 const windText = document.getElementById("windSpeed");
 const humText = document.getElementById("humidity");
@@ -26,7 +26,7 @@ document.querySelector("form").addEventListener("submit", (ev) => {
 });
 
 /* giphy import */
-// api.getGif().then((gifData) => {
-//   gif = gifData;
-//   console.log(gif);
-// });
+api.getGif().then((gifData) => {
+  gif = gifData;
+  console.log(gif);
+});
