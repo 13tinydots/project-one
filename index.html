@@ -11,9 +11,9 @@
   <body>
     <div class="card">
       <header class="card-header">
-        <p class="card-header-title is-centered">WeatherGif</p>
+        <p class="card-header-title is-centered has-background-info-dark has-text-white" >WeatherGif</p>
       </header>
-      <div class="card-content">
+      <div class="card-content has-background-info-light">
         <div class="content">
           Input your city to receive a visual expression of the current weather
         </div>
@@ -25,16 +25,18 @@
         <!-- from Amanda's code in slack -->
         <form class="field has-addons">
           <div class="control">
-            <input class="input" type="text" placeholder="Search for city" />
+            <input class="input" type="text" placeholder="Search your city" />
           </div>
           <div class="control">
-            <button class="button is-info" type="submit">Search</button>
+            <input class="input" type="text" placeholder="Mood" />
+          </div>
+          <div class="control">
+            <button class="button is-info is-centered" type="submit">Search</button>
           </div>
         </form>
       </nav>
       <section>
-        <!-- I have addeded the tile layout here, seemed to fit best here for the
-        gifs -->
+        <!-- I have addeded the tile layout here, seemed to fit best here for the gifs -->
         <div id="containerTile" class="tile is-ancestor">
           <div id="parentTile" class="tile is-vertical is-parent">
             <div id="conditionDesc" class="tile is-6 is-child box">cond</div>
