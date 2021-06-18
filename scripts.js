@@ -1,4 +1,5 @@
 import api from "./api.js";
+import convert from "./utils.js";
 
 let weather = null;
 const gif = null;
@@ -24,9 +25,3 @@ document.querySelector("form").addEventListener("submit", (ev) => {
     condText.innerText = `${[condition]}`;
   });
 });
-
-/* giphy import */
-// api.getGif().then((gifData) => {
-//   gif = gifData;
-//   console.log(gif);
-// });
