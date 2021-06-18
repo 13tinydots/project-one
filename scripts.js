@@ -2,11 +2,35 @@ import api from "./api.js";
 import convert from "./utils.js";
 
 let weather = null;
-const gif = null;
-const tempText = document.getElementById("conditionDesc");
+let gif = null;
+const tempText = document.getElementById("temperature");
 const windText = document.getElementById("windSpeed");
 const humText = document.getElementById("humidity");
-const condText = document.getElementById("temperature");
+const condText = document.getElementById("conditionDesc");
+const windWords = [
+  "windless",
+  "light breeze",
+  "breezy",
+  "windswept",
+  "gusty",
+  "tornado",
+];
+const tempWords = [
+  "ice",
+  "frozen",
+  "cold",
+  "chilly",
+  "mild",
+  "temperate",
+  "warm",
+  "tepid",
+  "hot",
+  "blazing",
+  "fire",
+  "volcano",
+];
+
+const humWords = ["dry", "desert", "moist", "wet", "water", "rain"];
 
 document.querySelector("form").addEventListener("submit", (ev) => {
   ev.preventDefault();
@@ -23,5 +47,17 @@ document.querySelector("form").addEventListener("submit", (ev) => {
     windText.innerText = `${[wind]} m/s`;
     humText.innerText = `${[hum]} percent`;
     condText.innerText = `${[condition]}`;
+    
+     const giphySearch = [];
+    giphySearch.push(temp, wind, hum, condition);
+    console.log(giphySearch);
   });
 });
+
+
+/* giphy import */
+api.getGif().then((gifData) => {
+  gif = gifData;
+  console.log(gif);
+});
+
