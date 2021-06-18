@@ -2,10 +2,10 @@ import api from "./api.js";
 
 let weather = null;
 const gif = null;
-const tempText = document.getElementById("conditionDesc");
+const tempText = document.getElementById("temperature");
 const windText = document.getElementById("windSpeed");
 const humText = document.getElementById("humidity");
-const condText = document.getElementById("temperature");
+const condText = document.getElementById("conditionDesc");
 
 document.querySelector("form").addEventListener("submit", (ev) => {
   ev.preventDefault();
