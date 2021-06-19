@@ -25,7 +25,13 @@ document.querySelector("form").addEventListener("submit", (ev) => {
     tempF = convert.cToF(temp);
     tempC = temp;
 
-    condText.innerHTML = `${[condition]}`;
+    // condText.innerHTML = `${[condition]}`;
+
+    // eslint-disable-next-line no-self-compare
+    if (condition === condition)
+      api.getGif(`${[condition]}`).then(function (image) {
+        condText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
+      });
 
     if (temp < 1000) {
       api.getGif("ice").then(function (image) {
