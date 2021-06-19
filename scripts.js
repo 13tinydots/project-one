@@ -25,37 +25,36 @@ document.querySelector("form").addEventListener("submit", (ev) => {
     tempF = convert.cToF(temp);
     tempC = temp;
 
-    condText.innerHTML = `${[condition]}`;
+    // eslint-disable-next-line no-self-compare
+    if (condition === condition)
+      api.getGif(`${[condition]}`).then(function (image) {
+        condText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
+      });
 
-    if (temp < 1000) {
+    if (temp <= 0) {
       api.getGif("ice").then(function (image) {
         tempText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
       });
     } else {
-      api.getGif("warm").then(function (image) {
-        console.log(image);
+      api.getGif("hot weather").then(function (image) {
         tempText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
       });
     }
     if (wind <= 1) {
-      api.getGif("windless").then(function (image) {
-        console.log(image);
+      api.getGif("calm winds").then(function (image) {
         windText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
       });
     } else {
-      api.getGif("breezy").then(function (image) {
-        console.log(image);
+      api.getGif("windy").then(function (image) {
         windText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
       });
     }
     if (hum <= 1) {
-      api.getGif("desert").then(function (image) {
-        console.log(image);
+      api.getGif("dry").then(function (image) {
         humText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
       });
     } else {
-      api.getGif("moist").then(function (image) {
-        console.log(image);
+      api.getGif("sweaty").then(function (image) {
         humText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
       });
     }
