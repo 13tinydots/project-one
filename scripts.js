@@ -10,26 +10,6 @@ const condText = document.getElementById("conditionDesc");
 let tempWord = null;
 let windWord = null;
 let humWord = null;
-const windWords = [
-  "windless",
-  "light breeze",
-  "breezy",
-  "windswept",
-  "gusty",
-  "tornado",
-];
-const tempWords = [
-  "ice",
-  "cold",
-  "mild",
-  "temperate",
-  "warm",
-  "hot",
-  "blazing",
-  "volcano",
-];
-
-const humWords = ["desert", "moist", "wet", "water", "rain"];
 
 document.querySelector("form").addEventListener("submit", (ev) => {
   ev.preventDefault();
@@ -39,8 +19,6 @@ document.querySelector("form").addEventListener("submit", (ev) => {
     const wind = weather.data[0].wind_spd;
     const hum = weather.data[0].rh;
     const condition = weather.data[0].weather.description;
-    console.log(temp);
-    console.log(weather);
 
     tempText.innerText = `${[temp]} degrees`;
     windText.innerText = `${[wind]} m/s`;
