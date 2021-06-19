@@ -11,7 +11,7 @@ export default {
   },
 
   getGif(search) {
-    return fetch(giphyUrl + search + giphyApiKey)
+    return fetch(giphyUrl + giphyApiKey + search)
       .then((res) => res.json())
       .then((gif) => gif);
   },
