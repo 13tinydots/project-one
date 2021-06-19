@@ -2,7 +2,7 @@ import api from "./api.js";
 import convert from "./utils.js";
 
 let weather = null;
-let gif = null;
+const gif = null;
 const tempText = document.getElementById("temperature");
 const windText = document.getElementById("windSpeed");
 const humText = document.getElementById("humidity");
@@ -49,10 +49,4 @@ document.querySelector("form").addEventListener("submit", (ev) => {
     giphySearch.push(tempWord, windWord, humWord, condition);
     console.log(giphySearch);
   });
-});
-
-/* giphy import */
-api.getGif().then((gifData) => {
-  gif = gifData;
-  console.log(gif);
 });
