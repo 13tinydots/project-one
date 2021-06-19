@@ -2,17 +2,13 @@ import api from "./api.js";
 import convert from "./utils.js";
 
 let weather = null;
-let gif = null;
 const tempText = document.getElementById("temperature");
 const windText = document.getElementById("windSpeed");
 const humText = document.getElementById("humidity");
 const condText = document.getElementById("conditionDesc");
 let tempF = null;
 let tempC = null;
-let tempWord = null;
-let windWord = null;
 let temp = null;
-let humWord = null;
 
 document.querySelector("form").addEventListener("submit", (ev) => {
   ev.preventDefault();
@@ -28,29 +24,41 @@ document.querySelector("form").addEventListener("submit", (ev) => {
     condText.innerText = `${[condition]}`;
     tempF = convert.cToF(temp);
     tempC = temp;
-    numbersToWords();
 
-    function numbersToWords() {
-      if (temp.value < 0) {
-        tempWord = "ice";
-      } else {
-        tempWord = "warm";
-      }
-      if (wind.value <= 1) {
-        windWord = "windless";
-      } else {
-        windWord = "breezy";
-      }
-      if (hum <= 1) {
-        humWord = "desert";
-      } else {
-        humWord = "moist";
-      }
+    condText.innerHTML = `${[condition]}`;
+
+    if (temp < 1000) {
+      api.getGif("ice").then(function (image) {
+        tempText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
+      });
+    } else {
+      api.getGif("warm").then(function (image) {
+        console.log(image);
+        tempText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
+      });
     }
-
-    const giphySearch = [];
-    giphySearch.push(tempWord, windWord, humWord, condition);
-    console.log(giphySearch);
+    if (wind <= 1) {
+      api.getGif("windless").then(function (image) {
+        console.log(image);
+        windText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
+      });
+    } else {
+      api.getGif("breezy").then(function (image) {
+        console.log(image);
+        windText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
+      });
+    }
+    if (hum <= 1) {
+      api.getGif("desert").then(function (image) {
+        console.log(image);
+        humText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
+      });
+    } else {
+      api.getGif("moist").then(function (image) {
+        console.log(image);
+        humText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
+      });
+    }
   });
 });
 
@@ -61,10 +69,4 @@ document.querySelector("section").addEventListener("change", () => {
   if (event.target.value === "F") {
     tempText.innerText = `${[tempF]} degrees`;
   }
-});
-
-/* giphy import */
-api.getGif().then((gifData) => {
-  gif = gifData;
-  console.log(gif);
 });
