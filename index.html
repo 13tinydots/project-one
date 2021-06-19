@@ -35,28 +35,29 @@
           </div>
         </form>
       </nav>
+      <section class="pb-2">
+        <h2 class="ml-4 pt-2">Select a measurement</h2>
+        <div>
+          <input class="ml-4" type="radio" id="Fahrenheit" name="drone" value="F" checked>
+          <label for="Fahrenheit">Fahrenheit</label>
+        </div>
+        <div>
+          <input class="ml-4" type="radio" id="Celsius" name="drone" value="C">
+          <label for="Celcius">Celsius</label>
+        </div>
+          </section>
+
       <section>
         <!-- I have addeded the tile layout here, seemed to fit best here for the gifs -->
         <div id="containerTile" class="tile is-ancestor">
           <div id="parentTile" class="tile is-vertical is-parent">
-            <div id="conditionDesc" class="tile is-6 is-child box"></div>
-            <div id="windSpeed" class="tile is-6 is-child box"></div>
-            <div id="humidity" class="tile is-6 is-child box"></div>
             <div id="temperature" class="tile is-6 is-child box">
-              <p id="tempvalue"></p>
-            </div>
-
+              <p id="tempvalue">Temperature</p></div>
+            <div id="conditionDesc" class="tile is-6 is-child box">Conditions</div>
+            <div id="windSpeed" class="tile is-6 is-child box">Wind Speed</div>
+            <div id="humidity" class="tile is-6 is-child box">Humidity Levels</div>
           </div>
         </div>
-              <label class="radio">
-                <input type="radio" name="answer">
-                C&#176;
-              </label>
-              <label class="radio">
-                <input type="radio" name="answer">
-                F&#176;
-              </label>
-
       </section>
       <!-- Dylan - I have added cards at the bottom of the page to outline the share buttons -->
       <div class="card">
