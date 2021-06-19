@@ -10,6 +10,8 @@ const condText = document.getElementById("conditionDesc");
 let tempWord = null;
 let windWord = null;
 let humWord = null;
+const giffyWords = [];
+const gifs = [];
 
 document.querySelector("form").addEventListener("submit", (ev) => {
   ev.preventDefault();
@@ -20,33 +22,42 @@ document.querySelector("form").addEventListener("submit", (ev) => {
     const hum = weather.data[0].rh;
     const condition = weather.data[0].weather.description;
 
-    tempText.innerText = `${[temp]} degrees`;
-    windText.innerText = `${[wind]} m/s`;
-    humText.innerText = `${[hum]} percent`;
-    condText.innerText = `${[condition]}`;
+    windText.innerHTML = `${[wind]} m/s`;
+    humText.innerHTML = `${[hum]} percent`;
+    condText.innerHTML = `${[condition]}`;
 
-    numbersToWords();
-
-    function numbersToWords() {
-      if (temp.value < 0) {
-        tempWord = "ice";
-      } else {
-        tempWord = "warm";
-      }
-      if (wind.value <= 1) {
-        windWord = "windless";
-      } else {
-        windWord = "breezy";
-      }
-      if (hum <= 1) {
-        humWord = "desert";
-      } else {
-        humWord = "moist";
-      }
+    if (temp < 1000) {
+      tempWord = "ice";
+      api.getGif("ice").then(function (image) {
+        tempText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
+      });
+    } else {
+      tempWord = "warm";
+      api.getGif("warm").then(function (image) {
+        console.log(image);
+      });
     }
-
-    const giphySearch = [];
-    giphySearch.push(tempWord, windWord, humWord, condition);
-    console.log(giphySearch);
+    if (wind <= 1) {
+      windWord = "windless";
+      api.getGif("windless").then(function (image) {
+        console.log(image);
+      });
+    } else {
+      windWord = "breezy";
+      api.getGif("breezy").then(function (image) {
+        console.log(image);
+      });
+    }
+    if (hum <= 1) {
+      humWord = "desert";
+      api.getGif("desert").then(function (image) {
+        console.log(image);
+      });
+    } else {
+      humWord = "moist";
+      api.getGif("moist").then(function (image) {
+        console.log(image);
+      });
+    }
   });
 });
