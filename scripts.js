@@ -22,8 +22,6 @@ document.querySelector("form").addEventListener("submit", (ev) => {
     const hum = weather.data[0].rh;
     const condition = weather.data[0].weather.description;
 
-    windText.innerHTML = `${[wind]} m/s`;
-    humText.innerHTML = `${[hum]} percent`;
     condText.innerHTML = `${[condition]}`;
 
     if (temp < 1000) {
@@ -35,28 +33,33 @@ document.querySelector("form").addEventListener("submit", (ev) => {
       tempWord = "warm";
       api.getGif("warm").then(function (image) {
         console.log(image);
+        tempText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
       });
     }
     if (wind <= 1) {
       windWord = "windless";
       api.getGif("windless").then(function (image) {
         console.log(image);
+        windText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
       });
     } else {
       windWord = "breezy";
       api.getGif("breezy").then(function (image) {
         console.log(image);
+        windText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
       });
     }
     if (hum <= 1) {
       humWord = "desert";
       api.getGif("desert").then(function (image) {
         console.log(image);
+        humText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
       });
     } else {
       humWord = "moist";
       api.getGif("moist").then(function (image) {
         console.log(image);
+        humText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
       });
     }
   });
