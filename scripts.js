@@ -7,6 +7,9 @@ const tempText = document.getElementById("temperature");
 const windText = document.getElementById("windSpeed");
 const humText = document.getElementById("humidity");
 const condText = document.getElementById("conditionDesc");
+let tempWord = null;
+let windWord = null;
+let humWord = null;
 const windWords = [
   "windless",
   "light breeze",
@@ -17,20 +20,16 @@ const windWords = [
 ];
 const tempWords = [
   "ice",
-  "frozen",
   "cold",
-  "chilly",
   "mild",
   "temperate",
   "warm",
-  "tepid",
   "hot",
   "blazing",
-  "fire",
   "volcano",
 ];
 
-const humWords = ["dry", "desert", "moist", "wet", "water", "rain"];
+const humWords = ["desert", "moist", "wet", "water", "rain"];
 
 document.querySelector("form").addEventListener("submit", (ev) => {
   ev.preventDefault();
@@ -47,17 +46,35 @@ document.querySelector("form").addEventListener("submit", (ev) => {
     windText.innerText = `${[wind]} m/s`;
     humText.innerText = `${[hum]} percent`;
     condText.innerText = `${[condition]}`;
-    
-     const giphySearch = [];
-    giphySearch.push(temp, wind, hum, condition);
+
+    numbersToWords();
+
+    function numbersToWords() {
+      if (temp.value < 0) {
+        tempWord = "ice";
+      } else {
+        tempWord = "warm";
+      }
+      if (wind.value <= 1) {
+        windWord = "windless";
+      } else {
+        windWord = "breezy";
+      }
+      if (hum <= 1) {
+        humWord = "desert";
+      } else {
+        humWord = "moist";
+      }
+    }
+
+    const giphySearch = [];
+    giphySearch.push(tempWord, windWord, humWord, condition);
     console.log(giphySearch);
   });
 });
-
 
 /* giphy import */
 api.getGif().then((gifData) => {
   gif = gifData;
   console.log(gif);
 });
-
