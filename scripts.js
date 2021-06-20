@@ -14,9 +14,12 @@ let tempF = null;
 let tempC = null;
 let temp = null;
 let tempCon = null;
-const mood = document.getElementById("mood");
+const moodSearch = document.querySelector("#moodSearch");
+const moodGiph = document.getElementById("mood");
+
 document.querySelector("form").addEventListener("submit", (ev) => {
   ev.preventDefault();
+
   api.getWeather(ev.target.elements[0].value).then((weatherData) => {
     weather = weatherData;
     temp = Math.round(weather.data[0].app_temp);
@@ -32,11 +35,13 @@ document.querySelector("form").addEventListener("submit", (ev) => {
     tempF = convert.cToF(tempCon);
     tempC = tempCon;
 
-    // eslint-disable-next-line no-self-compare
-    if (condition === condition)
-      api.getGif(`${[condition]}`).then(function (image) {
-        condText.innerHTML = `<img width="${image.data.images.downsized_medium}" src= "${image.data.images.downsized_medium.url}" alt="Random condition word 'giffy'" />`;
-      });
+    api.getGif(moodSearch.value).then(function (image) {
+      moodGiph.innerHTML = `<img width="${image.data.images.downsized_medium}" src= "${image.data.images.downsized.url}" alt="Random mood'giffy'" />`;
+    });
+
+    api.getGif(`${[condition]}`).then(function (image) {
+      condText.innerHTML = `<img width="${image.data.images.downsized_medium}" src= "${image.data.images.downsized_medium.url}" alt="Random condition word 'giffy'" />`;
+    });
 
     if (temp <= 0) {
       api.getGif("ice cold").then(function (image) {
