@@ -28,34 +28,37 @@ document.querySelector("form").addEventListener("submit", (ev) => {
     // eslint-disable-next-line no-self-compare
     if (condition === condition)
       api.getGif(`${[condition]}`).then(function (image) {
-        condText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
+        condText.innerHTML = `<img width="${image.data.images.downsized_medium}" src= "${image.data.images.downsized_medium.url}" alt="Random ice 'giffy'" />`;
       });
 
     if (temp <= 0) {
       api.getGif("ice cold").then(function (image) {
-        tempText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
+        tempText.innerHTML = `<img width="${image.data.images.downsized_medium}" src= "${image.data.images.downsized_medium.url}" alt="Random ice 'giffy'" /
+        >`;
+        console.log(image);
       });
     } else {
       api.getGif("heat wave").then(function (image) {
-        tempText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
+        tempText.innerHTML = `<img width="${image.data.images.downsized_medium}" src= "${image.data.images.downsized_medium.url}" alt="Random ice 'giffy'" />`;
+        console.log(image);
       });
     }
     if (wind <= 1) {
       api.getGif("calm").then(function (image) {
-        windText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
+        windText.innerHTML = `<img width="${image.data.images.downsized_medium}" src= "${image.data.images.downsized_medium.url}" alt="Random ice 'giffy'" />`;
       });
     } else {
       api.getGif("windy").then(function (image) {
-        windText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
+        windText.innerHTML = `<img width="${image.data.images.downsized_medium}" src= "${image.data.images.downsized_medium.url}" alt="Random ice 'giffy'" />`;
       });
     }
     if (hum <= 1) {
       api.getGif("dry heat").then(function (image) {
-        humText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
+        humText.innerHTML = `<img width="${image.data.images.downsized_medium}" src= "${image.data.images.downsized.url}" alt="Random ice 'giffy'" />`;
       });
     } else {
       api.getGif("humid").then(function (image) {
-        humText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
+        humText.innerHTML = `<img width="${image.data.images.downsized_medium}" src= "${image.data.images.downsized.url}" alt="Random ice 'giffy'" />`;
       });
     }
   });
