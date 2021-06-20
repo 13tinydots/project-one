@@ -19,8 +19,8 @@ document.querySelector("form").addEventListener("submit", (ev) => {
   ev.preventDefault();
   api.getWeather(ev.target.elements[0].value).then((weatherData) => {
     weather = weatherData;
-    temp = weather.data[0].app_temp;
-    tempCon = weather.data[0].app_temp;
+    temp = Math.round(weather.data[0].app_temp);
+    tempCon = Math.round(weather.data[0].app_temp);
     const wind = weather.data[0].wind_spd;
     const hum = weather.data[0].rh;
     const condition = weather.data[0].weather.description;
