@@ -9,7 +9,7 @@ const condText = document.getElementById("conditionDesc");
 let tempF = null;
 let tempC = null;
 let temp = null;
-
+const mood = document.getElementById("mood");
 document.querySelector("form").addEventListener("submit", (ev) => {
   ev.preventDefault();
   api.getWeather(ev.target.elements[0].value).then((weatherData) => {
@@ -32,16 +32,16 @@ document.querySelector("form").addEventListener("submit", (ev) => {
       });
 
     if (temp <= 0) {
-      api.getGif("ice").then(function (image) {
+      api.getGif("ice cold").then(function (image) {
         tempText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
       });
     } else {
-      api.getGif("hot weather").then(function (image) {
+      api.getGif("heat wave").then(function (image) {
         tempText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
       });
     }
     if (wind <= 1) {
-      api.getGif("calm winds").then(function (image) {
+      api.getGif("calm").then(function (image) {
         windText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
       });
     } else {
@@ -50,11 +50,11 @@ document.querySelector("form").addEventListener("submit", (ev) => {
       });
     }
     if (hum <= 1) {
-      api.getGif("dry").then(function (image) {
+      api.getGif("dry heat").then(function (image) {
         humText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
       });
     } else {
-      api.getGif("sweaty").then(function (image) {
+      api.getGif("humid").then(function (image) {
         humText.innerHTML = `<img width="${image.data.fixed_height_small_width}" src= "${image.data.fixed_height_small_url}" alt="Random ice 'giffy'" />`;
       });
     }
