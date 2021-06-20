@@ -24,9 +24,9 @@ document.querySelector("form").addEventListener("submit", (ev) => {
     const wind = weather.data[0].wind_spd;
     const hum = weather.data[0].rh;
     const condition = weather.data[0].weather.description;
-    tempDisp.innerText = `${[temp]} degrees`;
+    tempDisp.innerText = `${[temp]} ° `;
     windDisp.innerText = `${[wind]} m/s`;
-    humDisp.innerText = `${[hum]} percent`;
+    humDisp.innerText = `${[hum]} %`;
     condDisp.innerText = `${[condition]}`;
 
     tempF = convert.cToF(tempCon);
@@ -71,9 +71,9 @@ document.querySelector("form").addEventListener("submit", (ev) => {
 
 document.querySelector("section").addEventListener("change", () => {
   if (event.target.value === "C") {
-    tempDisp.innerText = `${[tempC]} degrees`;
+    tempDisp.innerText = `${[tempC]} °`;
   }
   if (event.target.value === "F") {
-    tempDisp.innerText = `${[tempF]} degrees`;
+    tempDisp.innerText = `${[tempF]} °`;
   }
 });
