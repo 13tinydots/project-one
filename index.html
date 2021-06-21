@@ -11,7 +11,15 @@
   <body>
     <div class="card">
       <header class="card-header">
-        <p class="card-header-title is-centered has-background-info-dark has-text-white" >WeatherGif</p>
+        <p
+          class="
+            card-header-title
+            is-centered
+            has-background-info-dark has-text-white
+          "
+        >
+          WeatherGif
+        </p>
       </header>
       <div class="card-content has-background-info-light">
         <div class="content">
@@ -28,58 +36,66 @@
             <input class="input" type="text" placeholder="Search your city" />
           </div>
           <div class="control">
-            <input class="input" id="moodSearch" type="text" placeholder="Mood" />
+            <input
+              class="input"
+              id="moodSearch"
+              type="text"
+              placeholder="Mood"
+            />
           </div>
           <div class="control">
-            <button class="button is-info is-centered" type="submit">Search</button>
+            <button class="button is-info is-centered" type="submit">
+              Search
+            </button>
           </div>
         </form>
       </nav>
       <section class="pb-2">
         <h2 class="ml-4 pt-2">Select a measurement</h2>
         <div>
-          <input class="ml-4" type="radio" id="Fahrenheit" name="drone" value="F">
+          <input
+            class="ml-4"
+            type="radio"
+            id="Fahrenheit"
+            name="drone"
+            value="F"
+          />
           <label for="Fahrenheit">Fahrenheit</label>
         </div>
         <div>
-          <input class="ml-4" type="radio" id="Celsius" name="drone" value="C" checked>
+          <input
+            class="ml-4"
+            type="radio"
+            id="Celsius"
+            name="drone"
+            value="C"
+            checked
+          />
           <label for="Celcius">Celsius</label>
         </div>
-          </section>
+      </section>
 
       <section>
         <!-- I have addeded the tile layout here, seemed to fit best here for the gifs -->
         <div id="containerTile" class="tile is-ancestor">
           <div id="parentTile" class="tile is-vertical is-parent">
             <h2>Temperature</h2>
-            <div id = "tempDisp" class="tile is-6 is-child box"></div>
+            <div id="tempDisp" class="tile is-6 is-child box"></div>
             <div id="temperature" class="tile is-6 is-child box"></div>
             <h2>Conditions</h2>
-            <div id = "condDisp" class="tile is-6 is-child box"></div>
+            <div id="condDisp" class="tile is-6 is-child box"></div>
             <div id="conditionDesc" class="tile is-6 is-child box"></div>
             <h2>Wind Speed</h2>
-            <div id = "windDisp" class="tile is-6 is-child box"></div>
+            <div id="windDisp" class="tile is-6 is-child box"></div>
             <div id="windSpeed" class="tile is-6 is-child box"></div>
             <h2>Humidity</h2>
-            <div id = "humDisp" class="tile is-6 is-child box"></div>
+            <div id="humDisp" class="tile is-6 is-child box"></div>
             <div id="humidity" class="tile is-6 is-child box"></div>
             <h2>Mood</h2>
             <div id="mood" class="tile is-6 is-child box"></div>
           </div>
         </div>
       </section>
-      <!-- Dylan - I have added cards at the bottom of the page to outline the share buttons -->
-      <div class="card">
-        <div class="card-content">
-        <footer class="card-footer">
-          <p class="card-footer-item">
-            <span> Share on <a href="#">Twitter</a> </span>
-          </p>
-          <p class="card-footer-item">
-            <span> Share on <a href="#">Facebook</a> </span>
-          </p>
-        </footer>
-      </div>
     </main>
     <script src="./scripts.js" type="module"></script>
   </body>
