@@ -10,12 +10,11 @@
 
 ## Overview
 
-<!-- TODO: Add a screenshot of the live project.
-    1. Link to a 'live demo.'
-    2. Describe your overall experience in a couple of sentences.
-    3. List a few specific technical things that you learned or improved on.
-    4. Share any other tips or guidance for others attempting this or something similar.
- -->
+![weatherGif](https://user-images.githubusercontent.com/79337638/122838691-38967080-d2bc-11eb-8260-16d3021eaa27.jpeg)
+Link to live demo: https://13tinydots.github.io/project-one/
+This was our first experience working as a team developing a shared project.
+Specifically we worked in a shared workspace like Trello using a Kanban template.  Bulma, also was a new framework.
+
 
 ### Built With
 
