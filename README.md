@@ -30,3 +30,5 @@ The app features a way to enjoy media while finding out the current weather.  Op
 amandakays89@gmail.com
 
 gabe.babelito@gmail.com
+
+dcbarstow7@gmail.com
