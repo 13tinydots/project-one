@@ -26,5 +26,4 @@ The app features a way to enjoy media while finding out the current weather.  Op
 
 ## Contact
 13tinydots@gmail.com
-amandakays89@gmail.com
-
+<p>amandakays89@gmail.com</p>
