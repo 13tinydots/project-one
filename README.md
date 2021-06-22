@@ -10,7 +10,7 @@
 
 ## Overview
 
-![weatherGif](![image](https://user-images.githubusercontent.com/83192009/123012305-a065bd80-d387-11eb-8b73-941f52d89313.png))
+![image](https://user-images.githubusercontent.com/79337638/123012801-87114100-d388-11eb-9ad9-29606cc559c9.png)
 Link to live demo: https://13tinydots.github.io/project-one/
 This was our first experience working as a team developing a shared project.
 Specifically we worked in a shared workspace like Trello using a Kanban template.  Bulma, also was a new framework.
