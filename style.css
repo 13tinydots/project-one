@@ -1,1 +1,32 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css";
+
+* {
+  color: white;
+}
+
+.card-header {
+  font-size: 60px;
+  height: 200px;
+  background-image: linear-gradient(
+    to right,
+    #002874,
+    #00549f,
+    #007dae,
+    #00a3a0,
+    #00c584,
+    #70c756,
+    #afc327,
+    #ecb700,
+    #ff8923,
+    #ff4d56,
+    #ff008f,
+    #e900cd
+  );
+}
+
+.card-content {
+  background: black;
+}
+body {
+  background: black;
+}
